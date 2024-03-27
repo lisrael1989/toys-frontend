@@ -1,3 +1,5 @@
+import { GoogleMap } from "../cmps/GoogleMap";
+
 export function AboutUs() {
   return (
     <section className="about-page">
@@ -12,6 +14,13 @@ export function AboutUs() {
       <h2>Visit Us</h2>
       <p>Looking for the perfect gift or a new adventure in play? Litvak Toy Store is your destination for all things fun. Join us in creating lasting memories and exploring the endless possibilities of imagination.</p>
       <h1 className="slogan-about">At Litvak Toy Store, every toy starts a story.</h1>
+
+      <div>
+        {<GoogleMap />}
+
+
+      </div>
     </section>
+
   )
 }

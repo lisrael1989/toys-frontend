@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { utilService } from '../services/util.service'
 
 
 export function ToyPreview({ toy, onRemove }) {
-
 
 
   return (<>
@@ -12,10 +12,11 @@ export function ToyPreview({ toy, onRemove }) {
     <article className="toy-preview">
       <h3 className="toy-name">{toy.name}</h3>
       <h4 > {`${toy.price}`}</h4>
-      <img src={`img/${toy.name}.png`} />
+      {/* <img src={`public/Img/toys-img/${utilService.getRandomIntInclusive(1, 10)}.jpg`} alt="toy-img" /> */}
+
+      <img src={`public/Img/3.webp`} alt="toy-img" />
 
 
-      <h4 > 🧸</h4>
       <h4 className='toy-labels'>
         {toy.labels.map(label => (<span key={label}>{label}</span>))}
       </h4>
