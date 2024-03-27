@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import { toyService } from '../services/toy.service'
 import { useSelector } from 'react-redux'
+import LabelSelectFilter from './LabelSelectFilter';
 
 const toyLabel = toyService.getLabels()
 
 export function ToyFilter({ filterBy, onSetFilter }) {
-
     const [filterByToEdit, setFilterByToEdit] = useState(filterBy)
+    const toyLabel = toyService.getLabels();
+
     useEffect(() => {
+        console.log(filterByToEdit);
         onSetFilter(filterByToEdit)
     }, [filterByToEdit])
 
     function handleChange({ target }) {
-        let { value, type, name: field } = target
-        if (type === 'checkbox') value = target.checked
-        setFilterByToEdit(prevFilterBy => ({ ...prevFilterBy, [field]: value }))
+        const { name, value, type } = target;
+        console.log(name, value);
+        setFilterByToEdit(prevState => ({
+            ...prevState,
+            [name]: type === 'checkbox' ? target.checked : value,
+        }));
     }
 
-
-    // this function allows us to filter the toys by multiple labels 
-    function onSelectLabels(ev) {
-        const label = ev.target.value
-        let filter = { ...filterByToEdit }
-        if (filter.labels.includes(label)) filter.labels = filter.labels.filter(l => l !== label)
-        else filter.labels.push(label)
-        setFilterByToEdit(filter)
+    function onSelectLabels(event) {
+        const { target: { value } } = event;
+        setFilterByToEdit(prevFilterBy => ({
+            ...prevFilterBy,
+            labels: typeof value === 'string' ? value.split(',') : value,
+        }));
     }
 
     return <div className="filter-container">
+
         <form className={'form-filter'}>
+            <h1 className='filterby-title'>filter by </h1>
             <label className='filter-label'>
                 <span className='filter-label'>Search</span>
                 <input
@@ -36,6 +42,7 @@ export function ToyFilter({ filterBy, onSetFilter }) {
                     onChange={handleChange}
                     type="search"
                     className="search-input"
+                    placeholder='By Name'
                     name="txt" />
             </label>
             <label className='filter-label'>
@@ -46,41 +53,29 @@ export function ToyFilter({ filterBy, onSetFilter }) {
                     className="min-price"
                     name="minPrice" />
             </label>
-            <label className='filter-label'>
-                <span className='filter-label'>Max-price</span>
-                <input
+            <label className='filter-label-instock'>
+                <span className='filter-label'>In stock</span>
+                <select
                     onChange={handleChange}
-                    type="number"
-                    className="max-price"
-                    name="maxPrice" />
+                    className='instock-input'
+                    name="inStock"
+                    value={filterByToEdit.inStock || ''}>
+                    <option value=""> All </option>
+                    <option value={true}>In stock</option>
+                    <option value={false}>Out of stock</option>
+                </select>
             </label>
-            <div>
-                <label className='filter-label'>
-                    <span className='filter-label'>Filter By</span>
-                    <select
-                        onChange={onSelectLabels}
-                        name="labels"
-                        multiple
-                        value={filterByToEdit.labels || []}>
-                        <option value=""> All </option>
-                        <>
-                            {toyLabel.map(label => <option key={label} value={label}>{label}</option>)}
-                        </>
-                    </select>
-                </label>
-                <label className='filter-label'>
-                    <span className='filter-label'>In stock</span>
-                    <select
-                        onChange={handleChange}
-                        name="inStock"
-                        value={filterByToEdit.inStock || ''}>
-                        <option value=""> All </option>
-                        <option value={true}>In stock</option>
-                        <option value={false}>Out of stock</option>
-                    </select>
-                </label>
+            <div className='labels-filter'>
+                <LabelSelectFilter
+                    labels={toyLabel}
+                    selectedLabels={filterByToEdit.labels || []}
+                    onSelectLabels={onSelectLabels}
+                />
             </div>
+
         </form>
     </div>
 }
+
+
 

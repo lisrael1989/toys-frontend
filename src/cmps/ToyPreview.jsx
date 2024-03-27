@@ -14,9 +14,9 @@ export function ToyPreview({ toy, onRemove }) {
       <h4 className='toy-price'> ${`${toy.price}`}</h4>
       {/* <img src={`public/Img/toys-img/${utilService.getRandomIntInclusive(1, 10)}.jpg`} alt="toy-img" /> */}
       <img className="toy-img" src={`public/Img/3.webp`} alt="toy-img" />
-      {/* <h4 className='toy-labels'>
+      <h4 className='toy-labels'>
         {toy.labels.map(label => (<span key={label}>{label}</span>))}
-      </h4> */}
+      </h4>
       <div className='inStock'>
         {(toy.inStock) ? ' In Stock  ' : 'Not in Stock'}
       </div>
