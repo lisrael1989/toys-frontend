@@ -1,0 +1,141 @@
+/* .app-header {
+  display: flex;
+  z-index: 10;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr1bg-light);
+  color: var(--clr-light);
+  padding: 1rem 2rem;
+  width: 100%;
+  max-height: 80px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  top: 0;
+}
+
+.logo-img {
+  width: 100px;
+  background: transparent;
+}
+
+.app-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.app-nav a {
+  color: var(--clr2bg);
+  font-family: monospace;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.app-nav a:hover,
+.app-nav a:focus {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .app-nav {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-header {
+    justify-content: flex-start;
+    padding-right: 1rem;
+  }
+
+  .logo-img {
+    margin-right: auto;
+  }
+
+  .app-nav {
+    gap: 0.5rem;
+    margin-right: 2rem;
+  }
+
+  .app-nav a {
+    font-size: 1em;
+    padding: 0.3rem 0.6rem;
+  }
+} */
+
+.app-header {
+  display: flex;
+  z-index: 10;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr1bg-light);
+  color: var(--clr-light);
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  top: 0;
+  /* overflow-x: auto;  */
+}
+
+.logo-img {
+  width: auto;
+  max-height: 80px;
+  background: transparent;
+}
+
+.app-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.app-nav a {
+  color: var(--clr-main);
+  /* font-family: monospace; */
+  font-family: AGENTRED;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.app-nav a:hover,
+.app-nav a:focus {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem; /* Give some padding */
+    justify-content: center; /* Center the items */
+  }
+
+  .logo-img {
+    max-height: 60px; /* Smaller logo for mobile */
+  }
+
+  .app-nav {
+    width: 100%;
+    justify-content: center; /* Center the nav items */
+    padding-top: 1rem; /* Space between logo and nav */
+  }
+
+  .app-nav a {
+    font-size: 1em; /* Smaller font size for mobile */
+  }
+}

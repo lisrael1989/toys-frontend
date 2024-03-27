@@ -1,0 +1,63 @@
+.toy-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  gap: 0.6em;
+  margin-block: 0.6em;
+}
+
+.toy-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--clr1bg);
+  padding: 0.65em;
+}
+
+.toy-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn {
+  color: white;
+  width: 50px;
+}
+/* 
+.toy-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+  padding-left: 0;
+  margin-block: 1em;
+}
+
+.toy-list li {
+  background-color: var(--clr-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.toy-list li:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.toy-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6em;
+}
+
+.remove-btn {
+  background-color: var(--clr-error);
+  color: var(--clr-light);
+}
+
+.remove-btn:hover {
+  background-color: darken(var(--clr-error), 10%);
+} */

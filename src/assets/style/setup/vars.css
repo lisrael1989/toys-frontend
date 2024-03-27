@@ -1,0 +1,28 @@
+:root {
+  --clr1: #087f81;
+  --clr2: #ae2012;
+
+  --clr1bg: #c3eddf;
+  --clr1bg-light: #c1f1e1;
+  --clr2bg: #ee9b00;
+  --clr2bg-light: #e9d8a6;
+
+  --gray1: rgb(240, 240, 240);
+  --gray2: rgb(155, 155, 155);
+  --gray3: rgb(44, 44, 44);
+
+  --clr-primary: #5d5b8d; /* primary color */
+  --clr-accent: #e3d26f; /* accent color */
+  --clr-light: #f0f0f0; /* light color for backgrounds */
+  --clr-dark: #333; /* dark color for text */
+  --clr-error: #ff6b6b; /* error color */
+  --clr-success: #48c774; /* success color */
+  --clr-main: #2b3990;
+
+  --gradientPrimary: linear-gradient(
+    90deg,
+    rgb(15, 179, 51) 0%,
+    rgb(29, 57, 150) 54%,
+    rgb(95, 251, 152) 100%
+  );
+}
