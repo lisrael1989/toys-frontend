@@ -14,7 +14,7 @@ export function ToySort({ sortBy, onSetSort }) {
   }
 
   return <section className="toy-sort">
-    <h3 className='sort-title'>Sort toys:</h3>
+    <h3 className='sort-title'></h3>
     <button onClick={() => handleSortChange('name')}>By name</button>
     <button onClick={() => handleSortChange('price')}>By price</button>
     <button onClick={handleToggleDirection}>Change direction {sortBy.asc ? '^' : 'v'}</button>

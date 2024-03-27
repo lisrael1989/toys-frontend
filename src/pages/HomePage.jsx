@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
 
-import logoImg from '../assets/Img/train.png'
+import logoImg from '../assets/Img/hero123.png'
+// import logoImg from '../assets/Img/doll111.png'
 
 
 export function HomePage() {
