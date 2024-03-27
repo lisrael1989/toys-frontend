@@ -10,37 +10,39 @@
 }
 
 .toy-preview img {
-  max-width: 100px;
+  max-width: 150px;
+  margin: auto;
+  justify-content: center;
 }
-/* 
-.toy-preview {
-  padding: 1em;
+
+.btn-remove {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: black;
+  width: 30px;
+  top: 0;
+  left: 0;
+  font-weight: bold;
 }
 
-.toy-preview h3 {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.toy-preview h4 {
+.inStock {
+  background-color: var(--clr-main);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--clr-accent);
   font-size: 1em;
-  margin-bottom: 0.5em;
+  margin-top: 15px;
+  font-family: jumbalo;
 }
 
-.toy-preview .labels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2em;
+.toy-labels {
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.toy-preview .label {
-  background-color: var(--clr-accent);
-  color: var(--clr-dark);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.8em;
-} */
+.toy-name {
+  font-family: AGENTRED;
+  font-size: 1.5em;
+}
+
+.toy-price {
+  font-family: AGENTRED;
+}

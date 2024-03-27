@@ -17,6 +17,7 @@ export function ToyList({ toys, onRemove }) {
           <div className="toy-actions">
             <button> <NavLink to={`/toy/edit/${toy._id}`}>Edit</NavLink> </button>
             <button> <NavLink to={`/toy/${toy._id}`}>Details</NavLink> </button>
+
           </div>
         </li>
       ))}
