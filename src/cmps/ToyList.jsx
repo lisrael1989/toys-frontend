@@ -7,7 +7,8 @@ export function ToyList({ toys, onRemove }) {
   if (!toys) return null;
 
   return (
-    <ul className="toy-list">
+
+    <ul className="  toy-list">
       {toys.map((toy) => (
         <li key={toy._id}>
           <ToyPreview
@@ -22,5 +23,6 @@ export function ToyList({ toys, onRemove }) {
         </li>
       ))}
     </ul>
+
   );
 }

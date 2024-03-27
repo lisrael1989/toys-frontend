@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import logoImg from '../assets/Img/doll.png'
-// import logoImg from '../assets/Img/hero5.webp'
+// import logoImg from '../assets/Img/doll.png'
+import logoImg from '../assets/Img/hero5.webp'
 
 
 export function HomePage() {
