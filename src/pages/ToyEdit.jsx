@@ -13,10 +13,12 @@ export function ToyEdit() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!toyId) return
-    toyService.getById(toyId).then(toy => {
-      setToyToEdit(toy)
-    })
+    if (toyId) {
+      toyService.getById(toyId).then(toy => {
+        setToyToEdit(toy)
+
+      })
+    }
   }, [])
 
 
@@ -25,17 +27,17 @@ export function ToyEdit() {
     const value = ev.target.type === 'number' ? +ev.target.value : ev.target.value
     setToyToEdit(prevToy => ({ ...prevToy, [field]: value }))
   }
+  // function handleChange({ target }) {
+  //   let { value, type, name: field } = target
+  //   value = type === 'number' ? +value : value
+  //   setToyToEdit((prevtoy) => ({ ...prevtoy, [field]: value }))
+  // }
 
   function onSetLabel(label) {
     const labels = toyToEdit.labels.includes(label) ? toyToEdit.labels.filter(l => l !== label) : [label, ...toyToEdit.labels]
     setToyToEdit(prevToy => ({ ...prevToy, labels }))
   }
 
-  function handleChange({ target }) {
-    let { value, type, name: field } = target
-    value = type === 'number' ? +value : value
-    setToyToEdit((prevtoy) => ({ ...prevtoy, [field]: value }))
-  }
 
   function onSave(ev) {
     ev.preventDefault()

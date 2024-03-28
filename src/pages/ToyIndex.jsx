@@ -37,7 +37,7 @@ export function ToyIndex() {
   }
 
 
-  function onRemoveToy(toyId) {
+  function onRemove(toyId) {
     removeToy(toyId)
       .then(() => {
         showSuccessMsg('Toy removed successfully')
@@ -67,7 +67,7 @@ export function ToyIndex() {
 
         <ToyList
           toys={toys}
-          onRemoveToy={onRemoveToy}
+          onRemove={onRemove}
 
         />
 

@@ -43,7 +43,7 @@ export function AppHeader() {
       {user ? (
         < section className='login-name' >
           <span className='full-name-login' to={`/user/${user._id}`}>Hello {user.fullname}
-            <span>${user.score.toLocaleString()}</span></span>
+          </span>
           <button className='logout-btn' onClick={onLogout}>Logout</button>
         </ section >
       ) : (

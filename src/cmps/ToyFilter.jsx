@@ -6,21 +6,24 @@ import LabelSelectFilter from './LabelSelectFilter';
 const toyLabel = toyService.getLabels()
 
 export function ToyFilter({ filterBy, onSetFilter }) {
-    const [filterByToEdit, setFilterByToEdit] = useState(filterBy)
+    const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
     const toyLabel = toyService.getLabels();
 
     useEffect(() => {
-        console.log(filterByToEdit);
         onSetFilter(filterByToEdit)
+        console.log(filterBy);
     }, [filterByToEdit])
 
+
     function handleChange({ target }) {
+
         const { name, value, type } = target;
         console.log(name, value);
         setFilterByToEdit(prevState => ({
             ...prevState,
             [name]: type === 'checkbox' ? target.checked : value,
         }));
+        console.log(filterByToEdit);
     }
 
     function onSelectLabels(event) {
@@ -31,14 +34,19 @@ export function ToyFilter({ filterBy, onSetFilter }) {
         }));
     }
 
+    function onSubmit(ev) {
+        ev.preventDefault()
+        setFilterByToEdit(filterBy)
+    }
+
     return <div className="filter-container">
 
-        <form className={'form-filter'}>
+        <form className={'form-filter'} onSubmit={onSubmit}>
             <h1 className='filterby-title'>filter by </h1>
             <label className='filter-label'>
                 <span className='filter-label'>Search</span>
                 <input
-                    value={filterByToEdit.search}
+                    value={filterByToEdit.txt}
                     onChange={handleChange}
                     type="search"
                     className="search-input"

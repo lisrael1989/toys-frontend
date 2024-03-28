@@ -64,12 +64,11 @@ function getEmptyToy() {
 }
 
 function getDefaultFilter() {
-  return { name: "", price: "", inStock: null }
+  return { name: "", price: "", inStock: "" }
 }
 
 function getDefaultSort() {
   return {
-    //
     by: "name",
     asc: true,
   }
