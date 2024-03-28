@@ -98,10 +98,10 @@ export function ToyEdit() {
               <option value="false">No</option>
             </select>
           </div>
-          <button onClick={onSave} className="save-toy-btn">Save</button>
-
-          <Link to="/toy">Cancel</Link>
-
+          <div className='edit-btns'>
+            <button onClick={onSave} className="save-toy-btn">Save</button>
+            <button><Link to="/toy">Cancel</Link> </button>
+          </div>
         </div>
       </form>
     </section>

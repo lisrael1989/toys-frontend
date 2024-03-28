@@ -29,10 +29,14 @@ input:focus {
 }
 
 .multi-select-edit {
+  cursor: pointer;
   margin-top: 30px;
   display: flex;
   font-size: 1em;
   word-spacing: 1.5px;
+}
+.edit-btns {
+  margin-top: 20px;
 }
 
 .edit-input {
