@@ -39,3 +39,18 @@ input:focus {
   margin: 0 0;
   width: 100px;
 }
+
+/*login form*/
+.login-name {
+  color: var(--clr-main);
+  font-family: lato-black;
+  font-size: 1.3em;
+}
+
+.logout-btn {
+  margin-left: 20px;
+}
+
+.full-name-login {
+  padding-top: 10px;
+}

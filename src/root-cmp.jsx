@@ -11,8 +11,8 @@ import { ToyDetails } from './pages/ToyDetails.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 import { AboutUs } from './pages/AboutUs.jsx'
 import { store } from './store/store.js'
-import { UserMsg } from './cmps/UserMsg.jsx'
 
+import { UserDetails } from './pages/UserDetails.jsx'
 
 export function App() {
   return (
@@ -28,9 +28,11 @@ export function App() {
 
               <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
               <Route element={<ToyDetails />} path="/toy/:toyId" />
+              <Route element={<UserDetails />} path="/user/:userId" />
+
             </Routes>
 
-            <UserMsg />
+
           </main>
 
         </section>

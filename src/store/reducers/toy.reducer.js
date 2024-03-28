@@ -7,6 +7,11 @@ export const UPDATE_TOY = "UPDATE_TOY"
 export const SET_FILTERBY = "SET_FILTERBY"
 export const SET_SORTBY = "SET_SORTBY"
 
+//* Shopping cart
+export const TOGGLE_CART_IS_SHOWN = "TOGGLE_CART_IS_SHOWN"
+export const ADD_CAR_TO_CART = "ADD_CAR_TO_CART"
+export const REMOVE_CAR_FROM_CART = "REMOVE_CAR_FROM_CART"
+export const CLEAR_CART = "CLEAR_CART"
 // export const SET_IS_LOADING = "SET_IS_LOADING"
 
 const initialState = {
@@ -49,6 +54,23 @@ export function toyReducer(state = initialState, action = {}) {
     //     ...state,
     //     isLoading: action.isLoading,
     //   }
+
+    //* Shopping cart
+    case TOGGLE_CART_IS_SHOWN:
+      return { ...state, isCartShown: !state.isCartShown }
+
+    case ADD_CAR_TO_CART:
+      return {
+        ...state,
+        shoppingCart: [...state.shoppingCart, action.car],
+      }
+
+    case REMOVE_CAR_FROM_CART:
+      const shoppingCart = state.shoppingCart.filter((car) => car._id !== action.carId)
+      return { ...state, shoppingCart }
+
+    case CLEAR_CART:
+      return { ...state, shoppingCart: [] }
 
     default:
       return state

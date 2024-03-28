@@ -53,7 +53,6 @@ export function ToyIndex() {
   return (
     <div className="toy-app">
       <main className="main-control-container" >
-        <NavLink to="/toy/edit" className="btn-add">Add Toy</NavLink>
         {/* <button className='add-btn' onClick={onAddToy}>Add Toy</button> */}
 
         <ToyFilter
@@ -64,6 +63,7 @@ export function ToyIndex() {
           sortBy={sortBy}
           onSetSort={onSetSort} />
 
+        <button><NavLink to="/toy/edit" className="btn-add">Add Toy</NavLink> </button>
 
         <ToyList
           toys={toys}
