@@ -7,11 +7,15 @@ import logoImg from '../assets/Img/hero123.png'
 
 export function HomePage() {
 
-  return (
-    <section className='home-page home-preview flex '>
+  return (<>
+    <section className='home-page flex '>
       <h1 className="home-page-slogan">Where  <br /><span>Play time</span> Never Ends!</h1>
-      <Link to="/toy"><img className=" bouncing-toy hero-img" src={logoImg} />
-      </Link>
+      <Link to="/toy"><img className=" bouncing-toy hero-img" src={logoImg} /> </Link>
     </section >
+    <div className='shop-btn-div'>
+      <button className='Shop-btn'> <Link to="/toy">SHOP NOW</Link></button>
+    </div>
+  </>
+
   )
 }

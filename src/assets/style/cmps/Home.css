@@ -1,16 +1,11 @@
-/* .hero-img {
-  max-width: 200px;
-  margin: 50px 100px;
-  display: flex;
-} */
-
 .home-page {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 5rem 2rem;
+  margin-top: 200px;
+  /* padding: 2rem 2rem; */
   color: var(--clr-primary);
-  height: calc(100vh - 80px);
+  /* height: calc(100vh - 80px); */
   flex-wrap: wrap;
 }
 
@@ -28,6 +23,7 @@
 h1 span {
   color: rgb(223, 133, 133);
 }
+
 .home-page img {
   max-width: 100vw;
   flex: 1;
@@ -54,6 +50,24 @@ h1 span {
 
 .bouncing-toy {
   animation: bounce 2s infinite;
+}
+
+.Shop-btn {
+  font-family: lato-black;
+  background-color: rgb(223, 133, 133);
+  color: whitesmoke;
+  width: 150px;
+  height: 50px;
+}
+
+.Shop-btn:hover {
+  transform: scale(1.2);
+  background-color: var(--clr1);
+}
+
+.shop-btn-div {
+  display: flex;
+  justify-content: center;
 }
 
 /* Responsive Design */
