@@ -51,6 +51,9 @@
   .about-page {
     padding: 2rem;
   }
+  .about-title {
+    margin-top: 120px;
+  }
 
   .about-title,
   .about-page h2 {
