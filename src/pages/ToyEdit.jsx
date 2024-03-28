@@ -88,10 +88,11 @@ export function ToyEdit() {
           placeholder="Enter price"
         />
         <div>
-          <div>
+          <div className='multi-select-edit'>
             <MultiSelect onSetLabel={onSetLabel} toyToEdit={toyToEdit} />
           </div>
           <div>
+            <h3> In- Stock:</h3>
             <select value={isInStock()} onChange={handleChange} name="inStock" className='edit-input'>
               <option value="true">Yes</option>
               <option value="false">No</option>

@@ -16,3 +16,26 @@ input:focus {
   background-color: var(--clr1bg);
   transition: background-color 1s;
 }
+
+/*Edit page-need to remove to other folder*/
+
+.toy-edit {
+  margin-top: 100px;
+}
+
+#name {
+  margin-right: 20px;
+  text-transform: uper;
+}
+
+.multi-select-edit {
+  margin-top: 30px;
+  display: flex;
+  font-size: 1em;
+  word-spacing: 1.5px;
+}
+
+.edit-input {
+  margin: 0 0;
+  width: 100px;
+}
