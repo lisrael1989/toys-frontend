@@ -43,6 +43,11 @@
   text-decoration: none;
 }
 
+.full-name-login {
+  color: var(--clr-main-light-red);
+  font-family: lato-bold;
+}
+
 @media (max-width: 768px) {
   .app-header {
     padding: 1rem; /* Give some padding */
