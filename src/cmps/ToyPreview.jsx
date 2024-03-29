@@ -12,7 +12,7 @@ export function ToyPreview({ toy, onRemove }) {
     <article className="toy-preview">
       <h3 className="toy-name">{toy.name}</h3>
       <h4 className='toy-price'> ${`${toy.price}`}</h4>
-      <img src={`/Img/toys-img/${utilService.getRandomIntInclusive(1, 5)}.png`} alt="toy-img" />
+      <img src={`/Img/toys-img/${utilService.getRandomIntInclusive(1, 4)}.png`} alt="toy-img" />
       {/* <h4 className='toy-labels'>
         {toy.labels.map(label => (<span key={label}>{label}</span>))}
       </h4> */}
