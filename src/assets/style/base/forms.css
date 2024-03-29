@@ -1,6 +1,7 @@
 button {
   cursor: pointer;
-  background-color: var(--clr2bg);
+  background-color: var(--clr-main-blue);
+  color: var(--gray1);
   margin: 0.5em;
   border: 0;
   padding: 0.5em 0.8em;
@@ -8,10 +9,11 @@ button {
 }
 
 button:hover {
-  background-color: var(--clr2);
+  background-color: var(--clr-main-light-red);
   color: white;
   transition: 0.3s;
 }
+
 input:focus {
   background-color: var(--clr1bg);
   transition: background-color 1s;
