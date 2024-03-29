@@ -7,8 +7,9 @@ export function ToyPreview({ toy, onRemove }) {
 
 
   return (<>
-
-    <button onClick={() => onRemove(toy._id)} className="btn-remove">X</button>
+    <div>
+      <button onClick={() => onRemove(toy._id)} className="btn-remove">X</button>
+    </div>
     <article className="toy-preview">
       <h3 className="toy-name">{toy.name}</h3>
       <h4 className='toy-price'> ${`${toy.price}`}</h4>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ToySort({ sortBy, onSetSort }) {
+export function ToySort({ sortBy = { by: 'name', asc: true }, onSetSort }) {
 
   function handleSortChange(by) {
     const updatedSort = { ...sortBy, by }
@@ -15,8 +15,8 @@ export function ToySort({ sortBy, onSetSort }) {
 
   return <section className="toy-sort">
     <h3 className='sort-title'></h3>
-    <button onClick={() => handleSortChange('name')}>By name</button>
-    <button onClick={() => handleSortChange('price')}>By price</button>
-    {/* <button onClick={handleToggleDirection}>Change direction {sortBy.asc ? '^' : 'v'}</button> */}
+    <button onClick={() => handleSortChange('name')}>Sort By Name</button>
+    <button onClick={() => handleSortChange('price')}>Sort By price</button>
+    <button onClick={handleToggleDirection}>Change direction {sortBy.asc ? '^' : 'v'}</button>
   </section>
 }
