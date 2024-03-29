@@ -6,8 +6,13 @@ import LabelSelectFilter from './LabelSelectFilter';
 const toyLabel = toyService.getLabels()
 
 export function ToyFilter({ filterBy, onSetFilter }) {
-    const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
-    const toyLabel = toyService.getLabels();
+    const [filterByToEdit, setFilterByToEdit] = useState({
+        ...filterBy,
+        txt: filterBy.txt || '', // Ensure all fields are initialized
+        minPrice: filterBy.minPrice || '',
+        inStock: filterBy.inStock || '',
+        labels: filterBy.labels || []
+    }); const toyLabel = toyService.getLabels();
 
     useEffect(() => {
         onSetFilter(filterByToEdit)
@@ -15,15 +20,31 @@ export function ToyFilter({ filterBy, onSetFilter }) {
     }, [filterByToEdit])
 
 
-    function handleChange({ target }) {
+    // function handleChange({ target }) {
 
+    //     const { name, value, type } = target;
+    //     console.log(name, value);
+    //     setFilterByToEdit(prevState => ({
+    //         ...prevState,
+    //         [name]: type === 'checkbox' ? target.checked : value,
+    //     }));
+    //     console.log(filterByToEdit);
+    // }
+
+    function handleChange({ target }) {
         const { name, value, type } = target;
-        console.log(name, value);
+        let formattedValue = value;
+
+        if (type === 'checkbox') {
+            formattedValue = target.checked;
+        } else if (name === 'inStock') {
+            formattedValue = value === 'true' ? true : value === 'false' ? false : '';
+        }
+
         setFilterByToEdit(prevState => ({
             ...prevState,
-            [name]: type === 'checkbox' ? target.checked : value,
+            [name]: formattedValue,
         }));
-        console.log(filterByToEdit);
     }
 
     function onSelectLabels(event) {
@@ -56,6 +77,7 @@ export function ToyFilter({ filterBy, onSetFilter }) {
             <label className='filter-label'>
                 <span className='filter-label'>Min-price</span>
                 <input
+                    value={filterByToEdit.minPrice}
                     onChange={handleChange}
                     type="number"
                     className="min-price"
@@ -63,7 +85,7 @@ export function ToyFilter({ filterBy, onSetFilter }) {
             </label>
             <label className='filter-label-instock'>
                 <span className='filter-label'>In stock</span>
-                <select
+                {/* <select
                     onChange={handleChange}
                     className='instock-input'
                     name="inStock"
@@ -71,6 +93,15 @@ export function ToyFilter({ filterBy, onSetFilter }) {
                     <option value=""> All </option>
                     <option value={true}>In stock</option>
                     <option value={false}>Out of stock</option>
+                </select> */}
+                <select
+                    onChange={handleChange}
+                    className='instock-input'
+                    name="inStock"
+                    value={filterByToEdit.inStock !== '' ? filterByToEdit.inStock.toString() : ''}>
+                    <option value=""> All </option>
+                    <option value="true">In stock</option>
+                    <option value="false">Out of stock</option>
                 </select>
             </label>
             <div className='labels-filter'>
