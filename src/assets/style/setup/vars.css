@@ -1,6 +1,15 @@
 :root {
+ --clr-main: #2b3990;
+--clr-main-blue:rgb(89, 171, 191);
+--clr-main-blue-dark:rgb(48, 78, 88);
+--clr-main-light-red:rgb(233, 106, 130);
+--clr2-main-light-red:#ed6565;
+--clr-main-light-green:rgb(146, 169, 171);
+
+
   --clr1: #087f81;
   --clr2: #ae2012;
+  --main-clr:#
 
   --clr1bg: #c3eddf;
   --clr1bg-light: #c1f1e1;
@@ -17,7 +26,7 @@
   --clr-dark: #333; /* dark color for text */
   --clr-error: #ff6b6b; /* error color */
   --clr-success: #48c774; /* success color */
-  --clr-main: #2b3990;
+ 
 
   --gradientPrimary: linear-gradient(
     90deg,

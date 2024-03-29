@@ -21,7 +21,8 @@
   text-align: center;
 }
 h1 span {
-  color: rgb(223, 133, 133);
+  /* color: rgb(223, 133, 133); */
+  color: var(--clr-main-light-red);
 }
 
 .home-page img {
@@ -54,7 +55,7 @@ h1 span {
 
 .Shop-btn {
   font-family: lato-black;
-  background-color: rgb(223, 133, 133);
+  background-color: var(--clr-main-light-red);
   color: whitesmoke;
   width: 150px;
   height: 50px;

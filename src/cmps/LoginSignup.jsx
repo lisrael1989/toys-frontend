@@ -32,7 +32,7 @@ export function LoginSignup() {
         isSignup={isSignup}
       />
       <div className="btns">
-        <a href="#" onClick={() => setIsSignUp(!isSignup)}>
+        <a className='sign-up-txt' href="#" onClick={() => setIsSignUp(!isSignup)}>
           {isSignup ?
             'Already a member? Login' :
             'New user? Signup here'

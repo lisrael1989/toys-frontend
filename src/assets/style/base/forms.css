@@ -58,3 +58,18 @@ input:focus {
 .full-name-login {
   padding-top: 10px;
 }
+
+.sign-up-txt {
+  color: var(--clr-main-light-red);
+
+  font-family: lato-bold;
+}
+
+.login-form input {
+  margin-right: 10px;
+}
+
+.login-form button {
+  background-color: var(--clr-main-light-red);
+  color: var(--gray1);
+}
