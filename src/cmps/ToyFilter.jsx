@@ -60,7 +60,7 @@ export function ToyFilter({ filterBy, onSetFilter }) {
                     type="number"
                     className="price"
                     name="price"
-                    value={filterByToEdit.price || ''}
+
                 />
 
             </label>
