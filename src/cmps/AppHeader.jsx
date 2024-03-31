@@ -38,13 +38,13 @@ export function AppHeader() {
         <NavLink to="/" >Home</NavLink>
         <NavLink to="/about" >About</NavLink>
         <NavLink to="/toy" >Toys</NavLink>
-        <a onClick={onToggleCart} href="#">🛒 Cart</a>
+        {/* <a onClick={onToggleCart} href="#">🛒 Cart</a> */}
       </nav>
       {user ? (
         < section className='login-name' >
           <span className='full-name-login' to={`/user/${user._id}`}>Hello {user.fullname}
           </span>
-          <button className='logout-btn' onClick={onLogout}>Logout</button>
+          {/* <button className='logout-btn' onClick={onLogout}>Logout</button> */}
         </ section >
       ) : (
         <section>
