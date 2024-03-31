@@ -30,14 +30,8 @@ const labels = [
 
 _createToys()
 
-// function query(filterBy, sort) {
-//   return httpService.get("toy", { params: { filterBy, sort } })
-// }
-
 function query(filterBy, sort) {
-  // Structure the params correctly before sending the request
-  const params = { ...filterBy, ...sort }
-  return httpService.get("toy", { params })
+  return httpService.get("toy", { params: { filterBy, sort } })
 }
 
 function getLabels() {
