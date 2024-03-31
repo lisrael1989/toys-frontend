@@ -54,12 +54,15 @@ export function ToyFilter({ filterBy, onSetFilter }) {
                     name="txt" />
             </label>
             <label className='filter-label'>
-                <span className='filter-label'>Min-price</span>
+                <span className='filter-label'>price</span>
                 <input
                     onChange={handleChange}
                     type="number"
-                    className="min-price"
-                    name="minPrice" />
+                    className="price"
+                    name="price"
+                    value={filterByToEdit.price || ''}
+                />
+
             </label>
             <label className='filter-label-instock'>
                 <span className='filter-label'>In stock</span>

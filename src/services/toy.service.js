@@ -30,8 +30,11 @@ const labels = [
 
 _createToys()
 
-function query(filterBy, sort) {
-  return httpService.get("toy", { params: { filterBy, sort } })
+function query(filterBy, sortBy) {
+  console.log(filterBy, sortBy)
+
+  console.log(sortBy)
+  return httpService.get("toy/", { params: { filterBy, sortBy } })
 }
 
 function getLabels() {
@@ -64,13 +67,13 @@ function getEmptyToy() {
 }
 
 function getDefaultFilter() {
-  return { name: "", price: "", inStock: "" }
+  return { txt: "", price: "", inStock: "", labels: [] }
 }
 
 function getDefaultSort() {
   return {
     by: "name",
-    asc: true,
+    asc: 1,
   }
 }
 
