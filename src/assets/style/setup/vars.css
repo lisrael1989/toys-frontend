@@ -31,7 +31,13 @@
   --gradientPrimary: linear-gradient(
     90deg,
     rgb(15, 179, 51) 0%,
-    rgb(29, 57, 150) 54%,
+    rgb(233, 106, 130) 54%,
     rgb(95, 251, 152) 100%
+  );
+  --gradientPrimary2: linear-gradient(
+    90deg,
+    rgb(15, 179, 51) 0%,
+    rgb(29, 57, 150) 54%,
+    rgb(89, 171, 191) 100%
   );
 }

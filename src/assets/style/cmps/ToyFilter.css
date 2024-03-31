@@ -1,4 +1,4 @@
-.filter-container {
+/* .filter-container {
   display: flex;
   justify-content: center;
   margin-top: 100px;
@@ -40,4 +40,87 @@ input {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+} */
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  background-color: var(--clr-accent);
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 1px 3px 4px 1px black;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filterby-title {
+  text-align: center;
+  font-family: AGENTRED;
+  margin-bottom: 15px;
+}
+
+.filter-label {
+  padding: 5px;
+  flex-wrap: wrap;
+}
+
+.max-price,
+.min-price {
+  max-width: 70px;
+}
+
+input {
+  border-radius: 5px;
+}
+
+.labels-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  height: 50px;
+  flex-wrap: wrap;
+}
+
+.input-instock {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Add media query for small devices */
+@media (max-width: 1051px) {
+  .filter-container {
+    margin-left: 20px; /* Adjust left margin */
+    margin-right: 20px; /* Adjust right margin */
+    margin-top: 100px; /* Adjust top margin for more space */
+  }
+}
+
+@media (max-width: 861px) {
+  .filter-container {
+    flex-direction: column;
+    padding: 0.5em;
+    margin-top: 150px;
+  }
+
+  .labels-filter,
+  .input-instock {
+    justify-content: space-around;
+  }
+
+  .min-price {
+    /* max-width: 100%;  */
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: calc(100% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust styles further if needed for very small devices */
 }
