@@ -4,7 +4,19 @@
   position: fixed;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--clr1bg-light);
+  /* background: rgb(233, 106, 130);
+  background: linear-gradient(
+    90deg,
+    rgba(233, 106, 130, 0.8519782913165266) 13%,
+    rgba(89, 171, 191, 1) 97%
+  ); */
+  background: rgb(233, 106, 130);
+  background: linear-gradient(
+    90deg,
+    rgb(241, 138, 157) 0%,
+    rgb(196, 233, 242) 91%,
+    rgb(218, 231, 221) 100%
+  );
   color: var(--clr-light);
   width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

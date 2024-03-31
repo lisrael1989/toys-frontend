@@ -1,10 +1,10 @@
 :root {
  --clr-main: #2b3990;
---clr-main-blue:rgb(89, 171, 191);
---clr-main-blue-dark:rgb(48, 78, 88);
---clr-main-light-red:rgb(233, 106, 130);
+--clr-main-blue:#59abbf;
+--clr-main-blue-dark:#304e58;
+--clr-main-light-red:#e96a82;
 --clr2-main-light-red:#ed6565;
---clr-main-light-green:rgb(146, 169, 171);
+--clr-main-light-green:#92a9ab;
 
 
   --clr1: #087f81;
@@ -30,14 +30,12 @@
 
   --gradientPrimary: linear-gradient(
     90deg,
-    rgb(15, 179, 51) 0%,
+    #0fb333 0%,
     rgb(233, 106, 130) 54%,
     rgb(95, 251, 152) 100%
   );
-  --gradientPrimary2: linear-gradient(
-    90deg,
-    rgb(15, 179, 51) 0%,
-    rgb(29, 57, 150) 54%,
-    rgb(89, 171, 191) 100%
-  );
+
+  --gradientPrimary2: linear-gradient(90deg, rgba(233,106,130,1) 4%, rgba(89,171,191,1) 97%)
+
 }
+
