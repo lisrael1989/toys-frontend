@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { MultiSelect } from '../cmps/MultiSelect';
+import Swal from 'sweetalert2';
 
 import { toyService } from "../services/toy.service.js"
 import { saveToy } from "../store/actions/toy.actions.js"
@@ -39,22 +40,53 @@ export function ToyEdit() {
   }
 
 
+  // function onSave(ev) {
+  //   ev.preventDefault()
+
+  //   const newToy = {
+  //     ...toyToEdit,
+  //     inStock: (toyToEdit.inStock === 'true') ? true : false
+  //   }
+
+  //   saveToy(newToy)
+  //     .then(() => {
+  //       showSuccessMsg('Toy saved successfully')
+  //       navigate('/toy')
+  //     })
+  //     .catch(err => {
+  //       showErrorMsg('Can not save toy, please try again')
+  //     })
+  // }
+
   function onSave(ev) {
-    ev.preventDefault()
+    ev.preventDefault();
 
-    const newToy = {
-      ...toyToEdit,
-      inStock: (toyToEdit.inStock === 'true') ? true : false
-    }
+    // SweetAlert2 confirmation dialog
+    Swal.fire({
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const newToy = {
+          ...toyToEdit,
+          inStock: toyToEdit.inStock === 'true',
+        };
 
-    saveToy(newToy)
-      .then(() => {
-        showSuccessMsg('Toy saved successfully')
-        navigate('/toy')
-      })
-      .catch(err => {
-        showErrorMsg('Can not save toy, please try again')
-      })
+        saveToy(newToy)
+          .then(() => {
+            Swal.fire("Saved!", "", "success"); // Show success message
+            navigate('/toy'); // Navigate back to the toy list/view
+          })
+          .catch(err => {
+            showErrorMsg('Can not save toy, please try again'); // Use your error handling
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info"); // Show info message
+      }
+    });
   }
 
   function isInStock() {
