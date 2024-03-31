@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 import { ToyList } from '../cmps/ToyList.jsx'
@@ -37,14 +38,46 @@ export function ToyIndex() {
   }
 
 
+  // function onRemove(toyId) {
+  //   removeToy(toyId)
+  //     .then(() => {
+  //       showSuccessMsg('Toy removed successfully')
+  //     })
+  //     .catch(err => {
+  //       showErrorMsg('Cant remove toy, try again.')
+  //     })
+  // }
+
+
   function onRemove(toyId) {
-    removeToy(toyId)
-      .then(() => {
-        showSuccessMsg('Toy removed successfully')
-      })
-      .catch(err => {
-        showErrorMsg('Cant remove toy, try again.')
-      })
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this toy!",
+      icon: "warning",
+      showCancelButton: true, // Ensures there is a cancel button
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    })
+      .then((willDelete) => {
+        if (willDelete.isConfirmed) {
+          removeToy(toyId)
+            .then(() => {
+              Swal.fire(
+                'Deleted!',
+                'Your toy has been deleted.',
+                'success'
+              );
+            })
+            .catch(err => {
+              Swal.fire(
+                'Failed!',
+                "Can't remove toy, try again.",
+                'error'
+              );
+            });
+        }
+      });
   }
 
 
