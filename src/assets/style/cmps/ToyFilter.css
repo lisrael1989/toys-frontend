@@ -89,12 +89,12 @@ input {
   flex-wrap: wrap;
 }
 
-/* Add media query for small devices */
+/* 
 @media (max-width: 1051px) {
   .filter-container {
-    margin-left: 20px; /* Adjust left margin */
-    margin-right: 20px; /* Adjust right margin */
-    margin-top: 100px; /* Adjust top margin for more space */
+    margin-left: 20px; 
+    margin-right: 20px; 
+    margin-top: 100px; 
   }
 }
 
@@ -111,7 +111,7 @@ input {
   }
 
   .min-price {
-    /* max-width: 100%;  */
+  
     margin-bottom: 10px;
   }
 
@@ -121,6 +121,88 @@ input {
   }
 }
 
-@media (max-width: 480px) {
-  /* Adjust styles further if needed for very small devices */
+@media (max-width: 550px) {
+  .filter-container {
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .filterby-title,
+  .filter-label,
+  .labels-filter,
+  .input-instock {
+    width: 100%;
+    margin-bottom: 5px; 
+  }
+
+  .max-price,
+  .min-price,
+  input {
+    width: calc(100% - 20px); 
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%; 
+  }
+} */
+
+/* Existing media queries */
+@media (max-width: 1051px) {
+  .filter-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 861px) {
+  .filter-container {
+    flex-direction: column;
+    padding: 0.5em;
+    margin-top: 150px;
+  }
+
+  .labels-filter,
+  .input-instock {
+    justify-content: space-around;
+  }
+
+  .min-price,
+  .max-price {
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: calc(100% - 10px);
+  }
+}
+
+@media (max-width: 550px) {
+  .filter-container {
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .filterby-title,
+  .filter-label,
+  .labels-filter,
+  .input-instock {
+    width: 100%;
+    margin-bottom: 5px; /* Adjust spacing to be more compact */
+  }
+
+  .max-price,
+  .min-price,
+  input {
+    width: calc(100% - 20px); /* Adjust input width for smaller screens */
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%; /* Make full width to utilize space */
+  }
 }
