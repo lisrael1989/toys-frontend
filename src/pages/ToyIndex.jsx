@@ -33,20 +33,9 @@ export function ToyIndex() {
     setFilterBy(filterBy)
   }
 
-  function onSetSort(sort) {
-    setSortBy(sort)
+  function onSetSort(sortBy) {
+    setSortBy(sortBy)
   }
-
-
-  // function onRemove(toyId) {
-  //   removeToy(toyId)
-  //     .then(() => {
-  //       showSuccessMsg('Toy removed successfully')
-  //     })
-  //     .catch(err => {
-  //       showErrorMsg('Cant remove toy, try again.')
-  //     })
-  // }
 
 
   function onRemove(toyId) {
@@ -54,7 +43,7 @@ export function ToyIndex() {
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this toy!",
       icon: "warning",
-      showCancelButton: true, // Ensures there is a cancel button
+      showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
