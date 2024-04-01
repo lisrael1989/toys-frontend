@@ -1,7 +1,19 @@
 import { userService } from "../../services/user.service.js"
 import { CLEAR_CART } from "../reducers/toy.reducer.js"
-import { SET_USER, SET_USER_SCORE } from "../reducers/user.reducer.js"
+import { SET_USER, SET_USER_SCORE, SET_USERS } from "../reducers/user.reducer.js"
 import { store } from "../store.js"
+
+export function loadUsers() {
+  return userService
+    .getUsers()
+    .then((users) => {
+      store.dispatch({ type: SET_USERS, users })
+    })
+    .catch((err) => {
+      console.error("user actions -> Cannot load users", err)
+      throw err
+    })
+}
 
 export function login(credentials) {
   return userService

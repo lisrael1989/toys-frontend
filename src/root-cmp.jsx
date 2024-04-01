@@ -12,7 +12,9 @@ import { HomePage } from './pages/HomePage.jsx'
 import { AboutUs } from './pages/AboutUs.jsx'
 import { store } from './store/store.js'
 
+
 import { UserDetails } from './pages/UserDetails.jsx'
+import { ReviewIndex } from './pages/ReviewIndex.jsx'
 
 export function App() {
   return (
@@ -25,6 +27,7 @@ export function App() {
               <Route element={<HomePage />} path="/" />
               <Route element={<AboutUs />} path="/about" />
               <Route element={<ToyIndex />} path="/toy" />
+              <Route element={<ReviewIndex />} path="/review" />
 
               <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
               <Route element={<ToyDetails />} path="/toy/:toyId" />
