@@ -1,0 +1,24 @@
+.toy-edit {
+  margin-top: 100px;
+
+  #name {
+    margin-right: 20px;
+    text-transform: uppercase;
+  }
+
+  .multi-select-edit {
+    cursor: pointer;
+    margin-top: 30px;
+    display: flex;
+    font-size: 1em;
+    word-spacing: 1.5px;
+  }
+  .edit-btns {
+    margin-top: 20px;
+  }
+
+  .edit-input {
+    margin: 0 0;
+    width: 100px;
+  }
+}

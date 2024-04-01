@@ -1,0 +1,24 @@
+// SETUP
+@import "setup/_typography.scss";
+@import "setup/_variables.scss";
+@import "setup/_functions.scss";
+
+// BASICS
+@import "base/_base.scss";
+@import "base/_helpers.scss";
+@import "base/_layout.scss";
+@import "base/_forms.scss";
+
+/* Components */
+@import "cmps/_ToyIndex.scss";
+@import "cmps/_Home.scss";
+@import "cmps/_about.scss";
+@import "cmps/_Toy-details.scss";
+@import "cmps/_AppHeader.scss";
+@import "cmps/_UserMsg.scss";
+
+@import "cmps/_ToyFilter.scss";
+@import "cmps/_Toysort.scss";
+@import "cmps/_ToyList.scss";
+@import "cmps/_ToyPreview.scss";
+@import "cmps/_ToyEdit.scss";

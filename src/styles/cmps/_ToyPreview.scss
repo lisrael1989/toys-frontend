@@ -1,0 +1,49 @@
+.toy-preview {
+  text-align: center;
+  padding: 0.3em;
+  display: flex;
+  flex-direction: column;
+}
+
+.toy-preview h4 {
+  text-transform: capitalize;
+  color: black;
+}
+
+.toy-preview img {
+  max-width: 150px;
+  margin: auto;
+  justify-content: center;
+}
+
+.btn-remove {
+  display: flex;
+  width: 30px;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+}
+
+.inStock {
+  background-color: $clr-main;
+  padding: 10px;
+  border-radius: 5px;
+  color: $clr-accent;
+  font-size: 1em;
+  margin-top: 15px;
+  font-family: jumbalo;
+}
+
+.toy-labels {
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.toy-name {
+  font-family: AGENTRED;
+  font-size: 1.5em;
+}
+
+.toy-price {
+  font-family: AGENTRED;
+}

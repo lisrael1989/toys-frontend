@@ -1,0 +1,60 @@
+.toy-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  gap: 0.6em;
+  margin-block: 0.6em;
+}
+
+.toy-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 250px;
+
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.toy-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn {
+  color: $gray1;
+  width: 50px;
+}
+
+@media (max-width: 1050px) {
+  .toy-list {
+    justify-content: center;
+  }
+
+  .toy-list li {
+    width: 45%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .toy-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toy-list li {
+    width: 90%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

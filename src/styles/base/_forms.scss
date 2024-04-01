@@ -1,6 +1,11 @@
+input:focus {
+  background-color: $clr1-bg;
+  transition: background-color 1s;
+}
+
 /*login form*/
 .login-name {
-  color: var(--clr-main);
+  color: $clr-main;
   font-family: lato-black;
   font-size: 1.3em;
 }
@@ -14,8 +19,7 @@
 }
 
 .sign-up-txt {
-  color: var(--clr-main-light-red);
-
+  color: $clr-main-light-red;
   font-family: lato-bold;
 }
 
@@ -24,14 +28,14 @@
 }
 
 .login-form button {
-  background-color: var(--clr-main-light-red);
-  color: var(--gray1);
+  background-color: $clr-main-light-red;
+  color: $gray1;
 }
 
 button {
   cursor: pointer;
-  background-color: var(--clr-main-blue);
-  color: var(--gray1);
+  background-color: $clr-main-blue;
+  color: $gray1;
   margin: 0.5em;
   border: 0;
   padding: 0.5em 0.8em;
@@ -39,12 +43,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--clr-main-light-red);
+  background-color: $clr-main-light-red;
   color: white;
   transition: 0.3s;
-}
-
-input:focus {
-  background-color: var(--clr1bg);
-  transition: background-color 1s;
 }

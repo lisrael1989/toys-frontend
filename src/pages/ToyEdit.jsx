@@ -61,7 +61,6 @@ export function ToyEdit() {
   function onSave(ev) {
     ev.preventDefault();
 
-    // SweetAlert2 confirmation dialog
     Swal.fire({
       title: "Do you want to save the changes?",
       showDenyButton: true,
@@ -77,14 +76,14 @@ export function ToyEdit() {
 
         saveToy(newToy)
           .then(() => {
-            Swal.fire("Saved!", "", "success"); // Show success message
-            navigate('/toy'); // Navigate back to the toy list/view
+            Swal.fire("Saved!", "", "success");
+            navigate('/toy');
           })
           .catch(err => {
-            showErrorMsg('Can not save toy, please try again'); // Use your error handling
+            showErrorMsg('Can not save toy, please try again');
           });
       } else if (result.isDenied) {
-        Swal.fire("Changes are not saved", "", "info"); // Show info message
+        Swal.fire("Changes are not saved", "", "info");
       }
     });
   }
