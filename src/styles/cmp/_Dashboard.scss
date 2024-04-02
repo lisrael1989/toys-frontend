@@ -7,93 +7,75 @@
   margin: 20px;
 }
 
-// .stock-info {
-//   display: flex;
-//   justify-content: center;
-//   margin-bottom: 20px;
-// }
+.stock-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-// .stock-item {
-//   flex: 1;
-//   background-color: #ffffff;
-//   padding: 15px;
-//   border-radius: 8px;
-//   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-//   margin: 0 10px;
-//   transition: transform 0.2s ease-in-out;
+.stock-item {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  transition: transform 0.2s ease-in-out;
 
-//   &:hover {
-//     transform: scale(1.05);
-//   }
-// }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
 
-// h2 {
-//   text-align: center;
-//   font-size: 28px;
-//   margin-bottom: 20px;
-// }
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 
-// p {
-//   font-size: 20px;
-//   font-weight: bold;
-//   margin-top: 10px;
-// }
+p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-// .chart {
-//   display: flex;
-//   justify-content: center;
-//   max-width: 800px;
-//   margin: 0 auto;
-//   margin-top: em(30px);
-//   margin-bottom: em(30px);
-//   background-color: $gray1;
-//   border-radius: 8px;
-//   padding: 20px;
-//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-// }
-// /* Add this to your DashboardPage.scss */
+.chart {
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: em(30px);
+  margin-bottom: em(30px);
+  background-color: $gray1;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
 
-// /* Style for the table */
-// table {
-//   border: black solid 1px;
-//   width: 10%;
-//   border-collapse: collapse;
-//   margin-bottom: 20px;
+table {
+  border: black solid 1px;
+  width: 20%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 
-//   th {
-//     padding: 10px;
-//     text-align: left;
-//     font-weight: bold;
-//     border-bottom: 2px solid #ddd;
-//     background-color: #f5f5f5;
-//   }
+  th {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    background-color: #f5f5f5;
+  }
 
-//   tr:nth-child(even) {
-//     @include tr($gray1);
-//   }
+  td {
+    padding: 10px;
 
-//   td {
-//     padding: 10px;
-//     //   border-bottom: 1px solid #ddd;
+    &.count {
+      font-weight: bold;
+      color: $clr-main-blue;
+    }
+  }
 
-//     &.count {
-//       font-weight: bold;
-//       color: $clr8; /* Blue color for counts */
-//     }
-//   }
-
-//   tbody tr:hover {
-//     @include tr($gray1);
-//   }
-// }
-// .dashboard-titles {
-//   font-family: "Righteous", cursive;
-// }
-
-// @mixin tr($bcg, $hover: darken($bcg, 8%)) {
-//   background-color: $bcg;
-//   cursor: pointer;
-//   &:hover {
-//     background-color: $hover;
-//   }
-// }
+  .dashboard-titles {
+    font-family: "Righteous", cursive;
+  }
+}
