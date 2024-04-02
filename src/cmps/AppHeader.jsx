@@ -38,6 +38,7 @@ export function AppHeader() {
         <NavLink to="/" >Home</NavLink>
         <NavLink to="/about" >About</NavLink>
         <NavLink to="/toy" >Toys</NavLink>
+        <NavLink title='Reviews' to="/review">Reviews</NavLink>
         {/* <a onClick={onToggleCart} href="#">🛒 Cart</a> */}
       </nav>
       {user ? (

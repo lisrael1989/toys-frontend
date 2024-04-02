@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
-import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
-import { loadUsers } from "../store/actions/user.actions"
-import { reviewService } from "../services/review.service"
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { loadUsers } from '../store/actions/user.actions'
+import { reviewService } from '../services/review.service'
 
 export function ReviewExplore() {
   const users = useSelector((storeState) => storeState.userModule.users)
   const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
   const [reviews, setReviews] = useState([])
-  const [filterBy, setFilterBy] = useState({ toyId: "", userId: "" })
+  const [filterBy, setFilterBy] = useState({ toyId: '', userId: '' })
 
   useEffect(() => {
     loadUsers()
@@ -19,12 +19,15 @@ export function ReviewExplore() {
     loadReviews()
   }, [filterBy])
 
+
+
   async function loadReviews() {
     try {
+
       const reviewsFromQ = await reviewService.query(filterBy)
       setReviews(reviewsFromQ)
     } catch (err) {
-      console.log("err loading the reviews:", err)
+      console.log('err loading the reviews:', err)
     }
   }
 
@@ -36,34 +39,38 @@ export function ReviewExplore() {
   async function onRemove(reviewId) {
     try {
       await reviewService.remove(reviewId)
-      setReviews((prev) => prev.filter((r) => r._id !== reviewId))
-      showSuccessMsg("Review removed")
+      setReviews(prev => prev.filter(r => r._id !== reviewId))
+      showSuccessMsg('Review removed')
     } catch (err) {
-      showErrorMsg("Cannot remove")
+      showErrorMsg('Cannot remove')
     }
   }
 
   function canRemove(review) {
     if (!loggedInUser) return false
-    return review.byUser._id === loggedInUser._id || loggedInUser.isAdmin
+    return review.user._id === loggedInUser._id || loggedInUser.isAdmin
   }
 
   return (
-    <div className="review-explore">
+    <div className='review-explore'>
       <h1>Reviews and Gossip</h1>
       {!!reviews.length && (
-        <ul className="review-list">
+        <ul className='review-list'>
           {reviews.map((review) => (
             <li key={review._id}>
-              {canRemove(review) && <button onClick={() => onRemove(review._id)}>X</button>}
+              {canRemove(review) && (
+                <button onClick={() => onRemove(review._id)}>X</button>
+              )}
               <p>
                 About:
-                <Link to={`/toy/${review.aboutToy._id}`}>{review.aboutToy.name}</Link>
+                <Link to={`/toy/${review.toy._id}`}>
+                  {review.toy.name}
+                </Link>
               </p>
               <h3>{review.txt}</h3>
               <p>
                 By:
-                {review.byUser.fullname}
+                {review.user.fullname}
               </p>
             </li>
           ))}
@@ -73,9 +80,13 @@ export function ReviewExplore() {
       {!reviews.length && <section>no reviews to show</section>}
 
       {users && loggedInUser && (
-        <form>
-          <select onChange={handleChange} value={filterBy.userId} name="userId">
-            <option value="">Select User</option>
+        <form >
+          <select
+            onChange={handleChange}
+            value={filterBy.userId}
+            name='userId'
+          >
+            <option value=''>Select User</option>
             {users.map((user) => (
               <option key={user._id} value={user._id}>
                 {user.fullname}

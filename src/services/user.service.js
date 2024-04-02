@@ -13,6 +13,11 @@ export const userService = {
   getLoggedinUser,
   updateScore,
   getEmptyCredentials,
+  getUsers,
+}
+
+function getUsers() {
+  return httpService.get(`user`)
 }
 
 function login({ username, password }) {

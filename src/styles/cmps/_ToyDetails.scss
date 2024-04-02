@@ -1,0 +1,51 @@
+.toy-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 150px;
+  background-color: $clr-light;
+  color: $clr-dark;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toy-details h2,
+.toy-details p {
+  font-family: "lato-bold", sans-serif;
+}
+
+.img-details {
+  width: 300px;
+  border-radius: 8px;
+}
+
+.btn-details {
+  background-color: $clr-main-blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "lato-bold", sans-serif;
+  margin-top: 30px;
+
+  &:hover {
+    background-color: $clr-main-light-red;
+  }
+}
+
+.toy-details a {
+  text-decoration: none;
+  color: white;
+}
+
+.toy-details span {
+  color: $clr-main-light-red;
+}
+
+.toy-description-heading {
+  font-size: em(20px);
+  color: $clr-main-light-red;
+  margin-top: em(20px);
+  font-family: "Courier New", Courier, monospace;
+}

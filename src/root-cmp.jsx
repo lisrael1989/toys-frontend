@@ -15,7 +15,7 @@ import { AboutUs } from './pages/AboutUs.jsx'
 import { store } from './store/store.js'
 
 
-// import { ReviewExplore } from './pages/ReviewExplore'
+import { ReviewExplore } from './pages/ReviewExplore.jsx'
 // import { ReviewIndex } from './pages/ReviewIndex.jsx'
 
 export function App() {
@@ -32,7 +32,7 @@ export function App() {
 
               <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
               <Route element={<ToyDetails />} path="/toy/:toyId" />
-              {/* <Route element={<ReviewExplore />} path="/review" /> */}
+              <Route element={<ReviewExplore />} path="/review" />
               <Route element={<UserDetails />} path="/user" />
 
             </Routes>
