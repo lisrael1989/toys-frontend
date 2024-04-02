@@ -1,21 +1,10 @@
-import { utilService } from "./util.service.js"
 import { storageService } from "./async-storage.service.js"
+import { utilService } from "./util.service.js"
 import { httpService } from "./http.service.js"
 
-// const BASE_URL = "toy/"
+const BASE_URL = "toy/"
 
 const STORAGE_KEY = "toyDB"
-
-export const toyService = {
-  query,
-  getById,
-  remove,
-  save,
-  getEmptyToy,
-  getDefaultFilter,
-  getDefaultSort,
-  getLabels,
-}
 
 const labels = [
   "On wheels",
@@ -27,22 +16,39 @@ const labels = [
   "Outdoor",
   "Battery Powered",
 ]
+export const toyService = {
+  query,
+  getById,
+  save,
+  remove,
+  getEmptyToy,
+  getDefaultFilter,
+  getDefaultSort,
+
+  getLabels,
+  getDataValues,
+}
 
 _createToys()
 
 function query(filterBy, sortBy) {
-  console.log(filterBy, sortBy)
-
-  console.log(sortBy)
   return httpService.get("toy/", { params: { filterBy, sortBy } })
+}
+
+function getById(toyId) {
+  return httpService.get(`toy/${toyId}`)
 }
 
 function getLabels() {
   return [...labels]
 }
 
-function getById(toyId) {
-  return httpService.get(`toy/${toyId}`)
+function getDataValues(labels) {
+  var newData = []
+  for (var i = 0; i < Object.keys(labels).length; i++) {
+    newData.push(Object.values(labels)[i])
+  }
+  return newData
 }
 
 function remove(toyId) {
@@ -60,7 +66,7 @@ function save(toy) {
 function getEmptyToy() {
   return {
     name: "",
-    price: "",
+    price: utilService.getRandomIntInclusive(100, 500),
     labels: [],
     inStock: "true",
   }

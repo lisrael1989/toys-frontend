@@ -2,48 +2,43 @@ import { useEffect, useState } from "react"
 import { userService } from "../services/user.service.js"
 import { Link, useNavigate, useParams } from "react-router-dom"
 
-// const { useEffect, useState } = React
-// const { Link, useParams, useNavigate } = ReactRouterDOM
 
 
 export function UserDetails() {
-  const [user, setUser] = useState(null)
-  const { userId } = useParams()
-  const navigate = useNavigate()
+
+  const user = useSelector(storeState => storeState.userModule.loggedinUser)
+  const [userReviews, setUserReviews] = useState([])
 
   useEffect(() => {
-    if (userId) loadUser()
-  }, [userId])
+    loadReviews()
+  }, [user])
 
-  function loadUser() {
-    userService.getById(userId)
-      .then(user => {
-        console.log('user:', user)
-        setUser(user)
-      })
-      .catch(err => {
-        console.log('Had issues in user details', err)
-        navigate('/')
-      })
+  async function loadReviews() {
+    try {
+      const reviews = await reviewService.query({ userId: user._id });
+      setUserReviews(reviews)
+
+    } catch (err) {
+      console.log('cannot get reviews :', err)
+    }
   }
 
 
   if (!user) return <div>Loading...</div>
 
-  const loggedInUser = userService.getLoggedinUser()
-  const isMyProfile = loggedInUser && loggedInUser._id === userId
+
   return (
     <section className="user-details">
-      <h1>Fullname: {user.fullname}</h1>
-      <h5>Score: {user.score}</h5>
-      {isMyProfile && (
-        <section>
-          <h2>My Stuff!</h2>
-        </section>
+      <h1>hello {user.fullname}</h1>
+      {!!userReviews.length && (
+        userReviews.map(r => (
+          <li className="review-card" key={r._id}>
+            your review:"{r.txt}", was posted in regards to "{r.aboutToy.name}"
+          </li>
+        ))
       )}
-      <p>@</p>
-      <p>User is so lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi voluptas cumque tempore, aperiam sed dolorum rem! Nemo quidem, placeat perferendis tempora aspernatur sit, explicabo veritatis corrupti perspiciatis repellat, enim quibusdam!</p>
-      <Link to="/">Home</Link>
+
+      {!userReviews.length && <span>you havent posted any reviews yet</span>}
     </section>
   )
 }

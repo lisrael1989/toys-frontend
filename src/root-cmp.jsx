@@ -3,17 +3,19 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // import '../src/assets/style/main.css'
 import './styles/main.scss'
-import { AppHeader } from './cmps/AppHeader.jsx'
+
 
 import { ToyIndex } from './pages/ToyIndex.jsx'
-import { ToyEdit } from './pages/ToyEdit.jsx'
+import { AppHeader } from './cmps/AppHeader.jsx'
+import { UserDetails } from './pages/UserDetails.jsx'
 import { ToyDetails } from './pages/ToyDetails.jsx'
+import { ToyEdit } from './pages/ToyEdit.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 import { AboutUs } from './pages/AboutUs.jsx'
 import { store } from './store/store.js'
 
 
-import { UserDetails } from './pages/UserDetails.jsx'
+// import { ReviewExplore } from './pages/ReviewExplore'
 // import { ReviewIndex } from './pages/ReviewIndex.jsx'
 
 export function App() {
@@ -30,7 +32,8 @@ export function App() {
 
               <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
               <Route element={<ToyDetails />} path="/toy/:toyId" />
-              <Route element={<UserDetails />} path="/user/:userId" />
+              {/* <Route element={<ReviewExplore />} path="/review" /> */}
+              <Route element={<UserDetails />} path="/user" />
 
             </Routes>
 
