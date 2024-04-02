@@ -44,7 +44,7 @@ export function AppHeader() {
         < section className='login-name' >
           <span className='full-name-login' to={`/user/${user._id}`}>Hello {user.fullname}
           </span>
-          {/* <button className='logout-btn' onClick={onLogout}>Logout</button> */}
+          <button className='logout-btn' onClick={onLogout}>Logout</button>
         </ section >
       ) : (
         <section>
